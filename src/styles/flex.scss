@@ -1,0 +1,18 @@
+.op-flex {
+    flex: 1;
+}
+
+.op-flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.op-flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.op-flex-center-center {
+    justify-content: center;
+    align-self: center;
+}

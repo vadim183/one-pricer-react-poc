@@ -1,0 +1,44 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "outDir": "build/dist",
+        "module": "esnext",
+        "target": "es6",
+        "lib": [ "es6", "dom", "esnext" ],
+        "sourceMap": true,
+        "allowJs": true,
+        "jsx": "react",
+        "moduleResolution": "node",
+        "rootDirs": [ "src" ],
+        "forceConsistentCasingInFileNames": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "esModuleInterop": true,
+        "paths": {
+            "@api/*": [ "api/*" ],
+            "@app/*": [ "src/app/*" ],
+            "@core/*": [ "src/core/*" ],
+            "@domain/*": [ "src/domain/*" ],
+            "@shared/*": [ "src/shared/*" ],
+            "@store/*": [ "src/store/*" ],
+            "@styles/*": [ "src/styles/*" ]
+        }
+    },
+    "filesGlob": [
+        "**/*.ts"
+    ],
+    "include": [
+        "images.d.ts",
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "build",
+        "scripts",
+        "acceptance-tests",
+        "webpack",
+        "jest",
+        "src/setupTests.ts"
+    ]
+}
