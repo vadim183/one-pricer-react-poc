@@ -1,4 +1,4 @@
-import { injectable } from 'inversify';
+import { injectable, inject } from 'inversify';
 import { Observable } from 'rxjs/index';
 
 import { HttpClient } from '@core/http';
@@ -10,12 +10,11 @@ const API_URL = 'https://jsonplaceholder.typicode.com/todos';
 
 @injectable()
 export class ItemDtoService {
-    constructor(private httpClient: HttpClient) {
-    }
+  @inject(HttpClient) private httpClient: HttpClient;
 
-    getAll(): Observable<ItemDTO[]> {
-        return this.httpClient.get<ItemDTO[]>(API_URL).pipe(
-            map((items)=> [...items, ...items, ...items, ...items, ...items])
-        );
-    }
+  getAll(): Observable<ItemDTO[]> {
+    return this.httpClient
+      .get<ItemDTO[]>(API_URL)
+      .pipe(map(items => [...items, ...items, ...items, ...items, ...items]));
+  }
 }
