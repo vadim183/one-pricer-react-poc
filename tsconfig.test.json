@@ -1,6 +1,14 @@
 {
-  "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "module": "commonjs"
-  }
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "module": "commonjs",
+        "paths": {
+            "@tests/*": [ "src/tests/*" ]
+        }
+    },
+    "include": [
+        "**/*.test.ts",
+        "**/*.mock.ts",
+        "**/*.dummy-data.ts"
+    ]
 }

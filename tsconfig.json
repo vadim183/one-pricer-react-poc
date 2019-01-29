@@ -29,8 +29,7 @@
         "**/*.ts"
     ],
     "include": [
-        "images.d.ts",
-        "src/**/*"
+        "images.d.ts"
     ],
     "exclude": [
         "node_modules",
@@ -39,6 +38,9 @@
         "acceptance-tests",
         "webpack",
         "jest",
-        "src/setupTests.ts"
+        "src/setupTests.ts",
+        "src/**/*.test.ts",
+        "src/**/*.mock.ts",
+        "src/**/*.dummy-data.ts"
     ]
 }
