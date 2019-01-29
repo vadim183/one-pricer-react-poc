@@ -23,8 +23,7 @@
         "start": "react-scripts-ts start",
         "build": "react-scripts-ts build",
         "test": "react-scripts-ts test --watchAll --env=jsdom",
-        "test:debug": "react-scripts-ts --inspect-brk test --runInBand",
-        "eject": "react-scripts-ts eject"
+        "test:debug": "react-scripts-ts --inspect-brk test --runInBand"
     },
     "devDependencies": {
         "@types/jest": "^23.3.10",

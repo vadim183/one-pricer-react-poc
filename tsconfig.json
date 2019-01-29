@@ -42,6 +42,8 @@
         "jest",
         "src/setupTests.ts",
         "src/**/*.test.ts",
+        "src/**/*.test.tsx",
+        "src/**/*.snap.ts",
         "src/**/*.mock.ts",
         "src/**/*.dummy-data.ts"
     ]

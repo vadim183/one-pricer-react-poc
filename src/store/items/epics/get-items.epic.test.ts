@@ -2,6 +2,7 @@ import { ActionsObservable, StateObservable } from 'redux-observable';
 
 import { setupActionsMock, setupStateMock } from '@tests/store';
 import { setupItemDtoServiceMock } from '@tests/domain';
+import { ITEM_DTO_LIST } from '@tests/api';
 import { setupSpy, Mock, Spy } from '@tests/index';
 
 import { GetItemsEpic, getItemsEpic } from '@store/items/epics/get-items.epic';
@@ -11,8 +12,7 @@ import {
 } from '@store/items';
 import { StoreState } from '@store/store-state.models';
 import { ItemDtoService } from '@domain/item-dto.service';
-import { ITEM_DTO_LIST } from '../../../tests/api';
-import { Observable, throwError } from 'rxjs/index';
+import { setupErrorSpy } from '@tests/utils';
 
 
 describe('GetItemsEpic', () => {
@@ -38,13 +38,13 @@ describe('GetItemsEpic', () => {
         spy = setupSpy();
     });
 
-    it('should call `getAll` from `itemDtoService`', () => {
+    test('should call `getAll` from `itemDtoService`', () => {
         runEpic();
 
         expect(itemDtoService.getAll).toHaveBeenCalled();
     });
 
-    it('should return `GetItemsSuccessAction`', () => {
+    test('should return `GetItemsSuccessAction`', () => {
         runEpic();
 
         let action = createGetItemsSuccessAction(ITEM_DTO_LIST);
@@ -52,13 +52,12 @@ describe('GetItemsEpic', () => {
         expect(spy).toHaveBeenCalledWith(action);
     });
 
-    it('should return `GetItemsErrorAction`', () => {
-        let error = new Error();
-        itemDtoService.getAll = setupSpy(throwError(error));
+    test('should return `GetItemsErrorAction`', () => {
+        itemDtoService.getAll = setupErrorSpy();
 
         runEpic();
 
-        let action = createGetItemsErrorAction(error);
+        let action = createGetItemsErrorAction(new Error());
 
         expect(spy).toHaveBeenCalledWith(action);
     });

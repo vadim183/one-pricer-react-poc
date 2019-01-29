@@ -87,7 +87,8 @@ Will be divided into submodules the same way as the `src` folder divided.
 ## **State Management**
 
 ## **Component Development**
-All components (except App) will be divided into 2 groups:
+All components (except App) will be divided into smart components (containers) and dumb
+components (components):
 
 #### **Containers**
 Will have a `.container` extension. These are the only components who are
@@ -103,3 +104,5 @@ will be created next to container.
 `mapDispatchToProps` methods will create dispatch methods of needed actions to
 the store. All actions should be created using their corresponding action 
 creators.
+
+#### **Components**
