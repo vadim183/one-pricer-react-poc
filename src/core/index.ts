@@ -1,2 +1,1 @@
-export * from './core.ioc-module';
-export * from './http';
+export * from './http-client';

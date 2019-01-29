@@ -1,11 +1,9 @@
-import { ItemDtoService } from '@domain/item-dto.service';
-
-import { itemDtoService } from '@store/store.ioc-root';
+import { ItemDtoService, itemDtoService } from '@domain/item-dto.service';
 
 export interface EpicDependencies {
-    itemDtoService: ItemDtoService
+  itemDtoService: ItemDtoService;
 }
 
 export const epicDependencies: EpicDependencies = {
-    itemDtoService
+  itemDtoService
 };
