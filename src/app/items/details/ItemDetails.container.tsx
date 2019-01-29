@@ -4,10 +4,7 @@ import { Dispatch } from 'redux';
 
 import { ItemDTO } from '@api/item-dto.model';
 
-import { createUpdateItemAction, selectItem, UpdateItemAction } from '@store/items';
-import {
-    StoreState
-} from '@store/store-state.models';
+import { createUpdateItemAction, selectItem, StoreState, UpdateItemAction } from '@store/index';
 import { ItemForm } from '@app/items/details/form/ItemForm.component';
 
 import './ItemDetails.component.scss';
@@ -23,7 +20,8 @@ class UnconnectedItemDetails extends React.Component<ItemDetailsProps> {
         return (
             <div className="op-item-details">
                 <div className="op-item-details_title">Edit Item</div>
-                <ItemForm item={this.props.item} updateItem={this.props.updateItem.bind(this)}/>
+                <ItemForm item={this.props.item}
+                          updateItem={this.props.updateItem.bind(this)} />
             </div>
         );
     }
