@@ -1,1 +1,0 @@
-export type Mock<T> = jest.Mocked<T>;
