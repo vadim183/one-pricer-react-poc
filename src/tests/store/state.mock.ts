@@ -4,5 +4,5 @@ import { StateObservable } from 'redux-observable';
 import { StoreState } from '@store/store-state.models';
 
 export function setupStateMock(): StateObservable<StoreState> {
-    return of(null) as any;
+    return of<StoreState>(null) as StateObservable<StoreState>;
 }

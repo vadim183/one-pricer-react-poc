@@ -7,6 +7,6 @@ import { ItemDTO } from '@api/item-dto.model';
 
 export function setupItemDtoServiceMock(): Mock<ItemDtoService> {
     return {
-        getAll: jest.fn<Observable<ItemDTO[]>>(() => of(ITEM_DTO_LIST))
-    } as any;
+        getAll: jest.fn<() => Observable<ItemDTO[]>>(() => of(ITEM_DTO_LIST))
+    };
 }
