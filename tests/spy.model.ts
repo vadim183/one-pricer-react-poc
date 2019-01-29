@@ -1,0 +1,1 @@
+export type Spy = jest.Mock<any>;
