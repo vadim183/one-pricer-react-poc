@@ -106,3 +106,5 @@ the store. All actions should be created using their corresponding action
 creators.
 
 #### **Components**
+Will have a `.component` extension. These will never access the Store directly, rather
+by props to a container component. 
